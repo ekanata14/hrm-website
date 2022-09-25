@@ -1,0 +1,26 @@
+:root{
+    --blue: #2E3192;
+    --second_blue : #0d106d;
+}
+
+.container{
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+.border-bottom-nav{
+    border-bottom: 3px solid var(--blue);
+}
+
+.btn-blue{
+    background-color: var(--blue);
+}
+
+.bg-blue{
+    background-color: var(--blue);
+}
+
+.bg-image{
+    background-image: url('https://source.unsplash.com/1200x500/?indonesia');
+    background-size: cover;
+}
+

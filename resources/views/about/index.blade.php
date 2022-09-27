@@ -9,8 +9,8 @@
     </div>
 </div>
 <div class="container mt-5 d-flex flex-row justify-content-around">
-    <div class="card col-lg-3 bg-image">
-        <div class="card-body" style="height: 300px">
+    <div class="card col-lg-3 bg-image" style="height:300px">
+        <div class="card-body d-flex align-items-bottom h-100">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>

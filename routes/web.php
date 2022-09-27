@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Blog;
+use App\Models\Events;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'blogs' => Blog::latest()->paginate(7),
+        'events' => Events::latest()->paginate(7)
+    ]);
 });
 
 Route::get('/about', function(){
@@ -22,11 +27,19 @@ Route::get('/about', function(){
 });
 
 Route::get('/blogs', function(){
-    return view('blogs.index');
+    return view('blogs.index',[
+        'blogs' => Blog::latest()->paginate(7)
+    ]);
+});
+
+Route::get('blogs/single', function(){
+    return view('blogs.blogSingle');
 });
 
 Route::get('/events', function(){
-    return view('events.index');
+    return view('events.index', [
+        'events' => Events::latest()->paginate(7)
+    ]);
 });
 
 Route::get('/profile', function(){

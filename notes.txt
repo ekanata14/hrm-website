@@ -1,0 +1,3 @@
+Next To Do:
+
+Make Resource Controller and connect it to web.php

@@ -29,4 +29,8 @@
     </div>
     @endforeach
 </div>
+
+<div class="container d-flex justify-content-end">
+    {{ $events->links() }}
+</div>
 @endsection

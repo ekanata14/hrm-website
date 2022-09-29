@@ -14,7 +14,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('blogs.index');    
+        return view('blogs.index',[
+            'blogs' => Blog::latest()->paginate(7)
+        ]);  
     }
 
     /**
@@ -46,7 +48,9 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('blogs.blogSingle');
+        return view('blogs.blogSingle',[
+            'blog' => Blog::where('slug')
+        ]);
     }
 
     /**

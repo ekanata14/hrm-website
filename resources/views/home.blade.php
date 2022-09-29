@@ -38,6 +38,9 @@
     </div>
     @endforeach
 </div>
+<div class="container d-flex justify-content-end">
+    {{ $blogs->links() }}
+</div>
 <div class="container mt-5" style="height: 400px">
     <div class="container d-flex flex-column justify-content-center align-items-center h-100 text-white bg-image rounded position-relative">
         <img src="images/hrm-logo.png" alt="hrm-logo" height="100">

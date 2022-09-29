@@ -33,7 +33,9 @@ Route::get('/blogs', function(){
 });
 
 Route::get('blogs/single', function(){
-    return view('blogs.blogSingle');
+    return view('blogs.blogSingle',[
+        'blog' => Blog::where('slug')
+    ]);
 });
 
 Route::get('/events', function(){

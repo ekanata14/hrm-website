@@ -3,6 +3,9 @@
 use App\Models\Blog;
 use App\Models\Events;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\EventsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,23 +29,24 @@ Route::get('/about', function(){
     return view('about.index');
 });
 
-Route::get('/blogs', function(){
-    return view('blogs.index',[
-        'blogs' => Blog::latest()->paginate(7)
-    ]);
-});
+// Route::get('/blogs', function(){
+//     return view('blogs.index',[
+//         'blogs' => Blog::latest()->paginate(7)
+//     ]);
+// });
 
-Route::get('blogs/single', function(){
-    return view('blogs.blogSingle',[
-        'blog' => Blog::where('slug')
-    ]);
-});
+// Route::get('blogs/single', function(){
+//     return view('blogs.blogSingle',[
+//         'blog' => Blog::where('slug')
+//     ]);
+// });
 
-Route::get('/events', function(){
-    return view('events.index', [
-        'events' => Events::latest()->paginate(7)
-    ]);
-});
+Route::resource('/blogs', BlogController::class);
+
+Route::resource('/events', EventsController::class);
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/profile', function(){
     return view('profile.index');

@@ -48,8 +48,9 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('blogs.blogSingle',[
-            'blog' => Blog::where('slug')
+        return view('blogs.show',[
+            'blog' => $blog,
+            'blogs' => Blog::latest()->take(3)->get()
         ]);
     }
 

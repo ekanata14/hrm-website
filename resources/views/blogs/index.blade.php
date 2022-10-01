@@ -9,7 +9,7 @@
         <div class="text-container col-lg-6 text-center p-3 rounded" style="background-color: rgba(0, 0, 0, 0.3)">
             <h1>{{ $blogs[0]->title }}</h1>
             <h5>{{ $blogs[0]->excerpt }}</h5>
-            <button class="btn btn-info">Read More</button>
+            <a class="btn btn-info" href="/blogs/{{ $blogs[0]->slug }}">Read More</a>
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@
         <div class="card-body">
             <h5 class="card-title">{{ $blog->title }}</h5>
             <p class="card-text">{{ $blog->excerpt }}</p>
-            <a href="/blogs/single" class="btn btn-primary">Read More</a>
+            <a href="/blogs/{{ $blog->slug }}" class="btn btn-primary">Read More</a>
         </div>
     </div>
     @endforeach

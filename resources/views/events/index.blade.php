@@ -24,7 +24,7 @@
         <div class="card-body">
             <h5 class="card-title">{{ $event->title }}</h5>
             <p class="card-text">{{ $event->excerpt }}</p>
-            <a href="#" class="btn btn-primary">Detail</a>
+            <a href="/events/{{ $event->slug }}" class="btn btn-primary">Detail</a>
         </div>
     </div>
     @endforeach

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\DashboardBlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +48,16 @@ Route::resource('/events', EventsController::class);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/profile', function(){
     return view('profile.index');
 });
+
+Route::get('/dashboard', function(){
+    return view('dashboard.index');
+});
+
+Route::resource('/dashboard/blog', DashboardBlogController::class);
+
+

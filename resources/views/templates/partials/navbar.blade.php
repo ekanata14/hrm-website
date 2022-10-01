@@ -27,6 +27,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/profile"><i class="bi bi-layout-text-sidebar-reverse"></i> Profile</a></li>
+              <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i> Dashboard</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
                     <form action="/logout" method="post">
